@@ -1,3 +1,5 @@
+//  Select the html table element
+let table = document.querySelector("#pixelCanvas");
 function makeGrid() {
   // assign the users choice to variables. height, width and color
   let height = document.getElementById("inputHeight").value;
@@ -9,8 +11,7 @@ function makeGrid() {
   colorPicker.addEventListener("input", function () {
     gridcolor = colorPicker.value;
   });
-  //  Select the html table element
-  let table = document.querySelector("#pixelCanvas");
+
   // creating a table row
   for (let i = 0; i <= height; i++) {
     let tableRow = table.insertRow(i);
@@ -37,5 +38,6 @@ form.addEventListener("submit", (e) => {
   // preventing the form default behavour
   e.preventDefault();
   //create a table
+  table.textContent = "";
   makeGrid();
 });
